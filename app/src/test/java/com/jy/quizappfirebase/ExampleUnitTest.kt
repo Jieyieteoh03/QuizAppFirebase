@@ -1,4 +1,4 @@
-package com.jy.mobstarterapp
+package com.jy.quizappfirebase
 
 import org.junit.Test
 

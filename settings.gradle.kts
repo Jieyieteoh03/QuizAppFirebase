@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "mob2.1retrofit"
+rootProject.name = "QuizAppFirebase"
 include(":app")
  

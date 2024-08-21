@@ -1,17 +1,18 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("androidx.navigation.safeargs")
+    id("androidx.navigation.safeargs.kotlin")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.jy.mobstarterapp"
+    namespace = "com.jy.quizappfirebase"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.jy.mobstarterapp"
+        applicationId = "com.jy.quizappfirebase"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
@@ -38,7 +39,8 @@ android {
     }
 
     buildFeatures{
-        viewBinding = true
+        dataBinding = true
+        buildConfig = true
     }
 }
 
@@ -49,6 +51,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -58,8 +62,9 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.fragment.ktx)
 
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    //Dependency Injection
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 }
 
 kapt{
