@@ -1,10 +1,10 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("androidx.navigation.safeargs.kotlin")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     id("com.google.gms.google-services")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -65,6 +65,7 @@ dependencies {
     //Dependency Injection
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    //implementation(kotlin("script-runtime"))
 }
 
 kapt{
